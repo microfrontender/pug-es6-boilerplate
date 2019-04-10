@@ -1,5 +1,6 @@
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = function(paths) {
     return {
         module: {
@@ -40,6 +41,11 @@ module.exports = function(paths) {
                   'resolve-url-loader',
                 ]
             }
+            ]
+          },
+          optimization: {
+            minimizer: [
+              new OptimizeCSSAssetsPlugin()
             ]
           },
           plugins: [

@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const devserver = require('./webpack/devserver');
@@ -7,6 +8,8 @@ const babel = require('./webpack/babel');
 const sass = require('./webpack/sass');
 const uglifyjs = require('./webpack/uglifyjs');
 const images = require('./webpack/images');
+const php = require('./webpack/php');
+const fonts = require('./webpack/fonts');
 
 
 const PATHS = {
@@ -18,7 +21,7 @@ const PATHS = {
 const common = merge([
   {
     entry: {
-      main: PATHS.source + '/pages/index/index.js'
+      main: PATHS.source + '/js/index.js'
     },
     output: {
       path: PATHS.build ,
@@ -27,9 +30,14 @@ const common = merge([
     
     plugins: [
       new HtmlWebpackPlugin({
-        template: PATHS.source + '/pages/index/index.pug',
+        template: PATHS.source + '/pug/index.pug',
         filename: 'index.html'
-      })
+      }),
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery"
+    })
     ],
     resolve: {
       alias: {
@@ -41,7 +49,9 @@ const common = merge([
   pug(),
   babel(),
   sass(),
-  images()
+  images(),
+  php(),
+  fonts()
 ]);
 
 module.exports = function(env) {
