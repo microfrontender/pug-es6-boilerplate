@@ -4,6 +4,4 @@
     tg - @AlexKalinovsky 
     */
 
-import "jquery";
-import 'reset-css';
 import '../sass/index.sass';
