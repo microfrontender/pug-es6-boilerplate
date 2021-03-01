@@ -4,10 +4,10 @@ module.exports = function() {
       module: {
           rules: [
               {
-                  test: /\.(eot|ttf|woff|woff2)$/,
+                  test: /\.(pdf)$/,
                   loader: 'file-loader',
                   options: {
-                    name: 'fonts/[name].[ext]',
+                    name: 'doc/[name].[ext]',
                   },
                 }
           ],

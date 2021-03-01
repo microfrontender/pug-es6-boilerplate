@@ -8,6 +8,7 @@ const babel = require('./webpack/babel');
 const sass = require('./webpack/sass');
 const uglifyjs = require('./webpack/uglifyjs');
 const images = require('./webpack/images');
+const files = require('./webpack/files');
 const php = require('./webpack/php');
 const fonts = require('./webpack/fonts');
 
@@ -33,6 +34,7 @@ const common = merge([
         template: PATHS.source + '/pug/index.pug',
         filename: 'index.html'
       }),
+      
       new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
@@ -50,6 +52,7 @@ const common = merge([
   babel(),
   sass(),
   images(),
+  files(),
   php(),
   fonts()
 ]);
