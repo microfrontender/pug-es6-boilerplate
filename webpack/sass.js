@@ -46,7 +46,7 @@ module.exports = function(paths) {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: "./css/style.css"
+        filename: "./css/style.css?ver=[hash]"
       })
     ]
   };
