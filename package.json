@@ -32,14 +32,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --env development --mode none",
-    "build": "webpack --env production"
+    "build": "webpack --env production --mode production"
   },
   "dependencies": {
-    "autoprefixer": "^9.7.0",
-    "fullpage.js": "^3.0.9",
-    "inputmask": "^4.0.9",
-    "jquery-touchswipe": "^1.6.19",
-    "owl.carousel": "^2.3.4",
-    "reset-css": "^4.0.1"
+    "autoprefixer": "^9.7.0"
   }
 }
