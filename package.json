@@ -35,6 +35,6 @@
     "build": "webpack --env production --mode production"
   },
   "dependencies": {
-    "autoprefixer": "^9.7.0"
+    "autoprefixer": "^10.0.0"
   }
 }
